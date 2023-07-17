@@ -1,24 +1,16 @@
 var canvas;
-var backgroundImage, car1_img, car2_img, track;
-var fuelImage, powerCoinImage, lifeImage;
-var obstacle1Image, obstacle2Image;
+var backgroundImage
 var database, gameState;
 var blastImage;
 var form, player, playerCount;
-var allPlayers, car1, car2, fuels, powerCoins, obstacles;
-var cars = [];
-
+var allPlayers, splat1, splat2, obstacles;
+var splats = []
 function preload() {
-  backgroundImage = loadImage("./assets/background.png");
-  car1_img = loadImage("../assets/car1.png");
-  car2_img = loadImage("../assets/car2.png");
-  track = loadImage("../assets/track.jpg");
-  fuelImage = loadImage("./assets/fuel.png");
-  powerCoinImage = loadImage("./assets/goldCoin.png");
-  obstacle1Image = loadImage("./assets/obstacle1.png");
-  obstacle2Image = loadImage("./assets/obstacle2.png");
-  lifeImage = loadImage("./assets/life.png");
-  blastImage = loadImage("./assets/blast.png");
+  backgroundImage = loadImage("../assets/Background.jpg");
+  Green_Splat = loadImage("../assets/Splat_Green.jpg");
+  Red_Splat = loadImage("../assets/Splat_Red.jpg");
+  Rock_Splat = loadImage("../assets/Splat_Rock.jpg");
+  Yellow_Splat = loadImage("../assets/Splat_Yellow.jpg");
 }
 
 function setup() {
@@ -35,14 +27,9 @@ function draw() {
     game.update(1);
   }
 
-  if (gameState === 1) {
-    game.play();
-  }
 
-  if (gameState === 2) {
-    game.showLeaderboard();
-    game.end();
-  }
+
+  
 }
 
 function windowResized() {

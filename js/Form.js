@@ -1,8 +1,8 @@
 class Form {
   constructor() {
-    this.input = createInput("").attribute("placeholder", "Ingresa tu nombre");
-    this.playButton = createButton("Jugar");
-    this.titleImg = createImg("./assets/title.png", "game title");
+    this.input = createInput("").attribute("placeholder", "Enter your name");
+    this.playButton = createButton("Play");
+    this.titleImg = createImg("Title.png", "game title");
     this.greeting = createElement("h2");
   }
 
@@ -28,20 +28,22 @@ class Form {
 
   handleMousePressed() {
     this.playButton.mousePressed(() => {
+      console.log(1)
       this.input.hide();
       this.playButton.hide();
       var message = `
-      Hola ${this.input.value()}
-      </br>espera a que otro jugador se una...`;
+      Hello ${this.input.value()}
+      </br>Waiting for another player...`;
       this.greeting.html(message);
       playerCount += 1;
       player.name = this.input.value();
       player.index = playerCount;
       player.addPlayer();
       player.updateCount(playerCount);
-      player.getDistance();
+      console.log(2)
     });
   }
+
 
   display() {
     this.setElementsPosition();
